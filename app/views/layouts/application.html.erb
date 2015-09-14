@@ -2,13 +2,17 @@
 <html>
 <head>
   <title>Microposts</title>
+  <% #アプリケーション全体で読み込むスタイルシート、javascriptファイルなどを指定する# %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <% #_header.html.erbを読み込む# %>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <% #各ページの部分テンプレート（erbファイル）が読み込まれる# %>
+    <%= yield %>
+  </div>
 </body>
 </html>

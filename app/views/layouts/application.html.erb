@@ -3,14 +3,20 @@
 <head>
   <title>Microposts</title>
   <% #アプリケーション全体で読み込むスタイルシート、javascriptファイルなどを指定する# %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <% #_header.html.erbを読み込む# %>
   <%= render 'layouts/header' %>
   <div class="container">
+    
+    <% #フラッシュメッセージを表示するために記載 %>
+    <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    
     <% #各ページの部分テンプレート（erbファイル）が読み込まれる# %>
     <%= yield %>
   </div>

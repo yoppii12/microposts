@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
   #home.html.erbの内容がトップページに表示されるようになる
   root to: 'static_pages#home'
   get 'signup', to: 'users#new'

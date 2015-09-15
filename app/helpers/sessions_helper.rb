@@ -1,3 +1,4 @@
+#現在のログインしているユーザーを返すcurrent_userメソッドと、logged_in?メソッドをヘルパモジュールのSessionsHelperに定義
 module SessionsHelper
     
     #ログイン中の場合はログインしているユーザーを、ログインしていない場合はnilを返su

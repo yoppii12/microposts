@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
     #emailは空でなく255文字以内、正規表現パターンに一致、他と異なる
     validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: { case_sensitive: false}
     
-    validates :area,presence: true, length: {maximum: 100}
+    validates :area,presence: true, length: {maximum: 100}, on: :update
     
-    validates :age , length: {minimum: 1 } , numericality: {only_integer: true, greater_than_or_equal_to: 0} 
+    validates :age , length: {minimum: 1 } , numericality: {only_integer: true, greater_than_or_equal_to: 0}, on: :update
     
     #機能
     #データベースに安全にハッシュ化（暗号化）されたpassword_digestを保存

@@ -22,6 +22,12 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user=User.find(params[:id])
+  end
+  
+  
+  
   private
   #ストロングパラメーターの設定
   # params[:user]のパラメータで name, email, password, password_confirmationのみを許可する

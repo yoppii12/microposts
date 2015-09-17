@@ -2,8 +2,17 @@
 <h1>
     <% #Gravatarサービスより引用 %>
     <%= gravatar_for @user %>
-    
     <%= @user.name %>
-    
-    <%= 
 </h1>
+<h3>
+    <div class="profile">
+        
+        <span class="label label-info">Age:<%= @user.age %></span>
+        <br>
+        <span class="label label-info">Area:<%= @user.area %></span>
+        <br>
+        <br>
+        <%= link_to 'プロフィール編集', edit_user_path %>
+    </div>
+</h3>
+    

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="row">
     <aside class="col-md-4">
         <section class="user_info">
@@ -12,20 +12,23 @@
         </section>
     </aside>
     
-    
     <div class="col-md-8">
+        
+        <% #ログインしていればフォローフォームをレンダリング　%>
+        <%= render 'follow_form' if logged_in? %>
+        
         <% if @user.microposts.any? %>
         <h3>Microposts(<%= @user.microposts.count %>)</h3>
         <ol class="microposts"><%= render @microposts %></ol>
         <% end %>
     </div>
-    
 </div>
-=======
+
 <% #ユーザーの詳細画面 %>
 <h1>
     <% #Gravatarサービスより引用 %>
     <%= gravatar_for @user %>
+    <br>
     <%= @user.name %>
 </h1>
 <h3>
@@ -39,5 +42,3 @@
         <%= link_to 'プロフィール編集', edit_user_path %>
     </div>
 </h3>
-    
->>>>>>> user-profile

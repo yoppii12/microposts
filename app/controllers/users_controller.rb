@@ -23,11 +23,25 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user=User.find(params[:id])
+  end
+  
+  def update
+    @user=User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_url(@user), notice: 'プロフィールを編集しました。'
+    else
+      flash.now[:alert]="プロフィール情報を入力してください。"
+      render 'edit'
+    end
+  end
+  
   private
   #ストロングパラメーターの設定
   # params[:user]のパラメータで name, email, password, password_confirmationのみを許可する
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :age, :area, :password, :password_confirmation)
   end
   
 end

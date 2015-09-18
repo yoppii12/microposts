@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row">
     <aside class="col-md-4">
         <section class="user_info">
@@ -18,3 +19,23 @@
         
     </div>
 </div>
+=======
+<% #ユーザーの詳細画面 %>
+<h1>
+    <% #Gravatarサービスより引用 %>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+</h1>
+<h3>
+    <div class="profile">
+        
+        <span class="label label-info">Age:<%= @user.age %></span>
+        <br>
+        <span class="label label-info">Area:<%= @user.area %></span>
+        <br>
+        <br>
+        <%= link_to 'プロフィール編集', edit_user_path %>
+    </div>
+</h3>
+    
+>>>>>>> user-profile

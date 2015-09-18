@@ -1,0 +1,6 @@
+<% #自分をフォローしているユーザーの表示　%>
+
+<div class="follower">
+    <% @followers do |relationship| %>
+    <%= relationship.name %>
+</div>

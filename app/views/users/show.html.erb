@@ -39,8 +39,9 @@
         <span class="label label-info">Area:<%= @user.area %></span>
         <br>
         <br>
-        <p>Follower:<%= @user.following_relationships.count %>  
-        Followed:<%= @user.follower_relationships.count %></p>
+        <p> <a href="follower.html.erb">Follower : <%= @user.following_relationships.count %></a>
+        <a href="followed.html.erb"> Followed : <%= @user.follower_relationships.count %> </a> </p>
+        
         
         <%= link_to 'プロフィール編集', edit_user_path %>
     </div>

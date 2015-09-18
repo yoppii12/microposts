@@ -39,6 +39,8 @@
         <span class="label label-info">Area:<%= @user.area %></span>
         <br>
         <br>
+        <p>follower:<%= @user.following_relationships.count %>  followed:<%= @user.follower_relationships.count %></p>
+        
         <%= link_to 'プロフィール編集', edit_user_path %>
     </div>
 </h3>

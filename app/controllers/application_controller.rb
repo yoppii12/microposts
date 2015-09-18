@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   
   private
+  #ログインを促す画面
   def logged_in_user
     #ログインしていない場合（logged_in?がfalseのとき）のみ処理を行う
     unless logged_in?

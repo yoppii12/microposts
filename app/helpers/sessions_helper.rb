@@ -1,12 +1,12 @@
 #現在のログインしているユーザーを返すcurrent_userメソッドと、logged_in?メソッドをヘルパモジュールのSessionsHelperに定義
 module SessionsHelper
     
-    #ログイン中の場合はログインしているユーザーを、ログインしていない場合はnilを返su
+    #ログイン中の場合はログインしているユーザーを、ログインしていない場合はnilを返す
     def current_user
         @current_user ||=User.find_by(id: session[:user_id])
     end
     
-    #current_userが存在する場合はtrueを、nilの場合はfalseを返し 
+    #current_userが存在する場合はtrueを、nilの場合はfalseを返す
     def logged_in?
         !!current_user
     end

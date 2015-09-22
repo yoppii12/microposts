@@ -2,10 +2,10 @@
 
 <div class="panel panel-info">
     <div class="panel-heading">
-        Following Users
+        Follower Users
     </div>
     
-    <div class="followings">
+    <div class="followers">
         <div class="panel-body">
             <table class="table">
                 <thead>
@@ -14,9 +14,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% @followings.each do |following_users| %>
+                    <% @followers.each do |follower_users| %>
                     <tr>
-                        <th><span class="label label-info"><%= following_users.name %></span></th>
+                        <th><span class="label label-info"><%= follower_users.name %></span></th>
                     </tr>
                     <% end %>
                 </tbody>

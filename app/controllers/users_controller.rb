@@ -37,6 +37,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def followings
+    #現在ログインしているユーザー（自分のＩＤ）を取得）
+    @user=User.find(params[:id])
+    @followings=@user.following_users
+  end
+  
+  def followers
+    @user=User.find(params[:id])
+    @followers=@user.follower_users
+  end
+  
   private
   #ストロングパラメーターの設定
   # params[:user]のパラメータで name, email, password, password_confirmationのみを許可する

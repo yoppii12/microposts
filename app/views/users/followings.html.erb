@@ -1,0 +1,7 @@
+<% #自分をフォローしているユーザーの表示　%>
+
+<div class="followings">
+    <% @followings.each do |following_users| %>
+    <%= following_users.name %>
+    <% end %>
+</div>

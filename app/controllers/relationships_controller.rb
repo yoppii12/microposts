@@ -13,7 +13,4 @@ class RelationshipsController < ApplicationController
         current_user.unfollow(@user)
     end
     
-    def index
-        @followers=user.following_Relationships.all
-    end
 end

@@ -1,3 +1,3 @@
 <% #escape_javascriptで、文字列がJavaScriptのプログラムの文字列として問題ないように変換処理 %>
 <% #$("#follow_form").html()の部分で、<div id="follow_form">の中のHTMLをusers/unfollow.html.erbの内容で置き換え %>
-$("#follow_form").html("<%= escape_javascript(render('users/unfollow')) %>);
+$("#follow_form").html("<%= escape_javascript(render('users/unfollow')) %>");

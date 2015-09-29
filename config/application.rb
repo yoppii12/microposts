@@ -32,5 +32,7 @@ module Microposts
     #Ajaxでリクエストを送信する際に、データを安全にやりとりするためにトークンという文字列を付与
     config.action_view.embed_authenticity_token_in_remote_forms = true
     
+    config.i18n.default_locale= :ja
+    
   end
 end

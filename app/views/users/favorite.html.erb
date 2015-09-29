@@ -1,0 +1,29 @@
+<% #お気に入りに追加した投稿とそのユーザー名の表示　%>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Favorites
+    </div>
+    
+    <div class="followings">
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User name</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @user.each do |microposts| %>
+                    <% @micropost.each do |microposts| %>
+                    <tr>
+                        <th><span class="label label-info"><%= microposts.name %></span></th>
+                        <td><%= microposts.content %> </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
         Micropost.where(user_id: following_user_ids + [self.id])
     end
     
+    
 end
 
 

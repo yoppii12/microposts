@@ -48,11 +48,17 @@ class UsersController < ApplicationController
     @followers=@user.follower_users
   end
   
+  def favorite_items
+    if logged_in?
+      @micropost=Favorite.find(params[:micropost_id])
+      @user=@micropost.user_id
+    end
+  end
+  
   private
   #ストロングパラメーターの設定
   # params[:user]のパラメータで name, email, password, password_confirmationのみを許可する
   def user_params
     params.require(:user).permit(:name, :email, :age, :area, :password, :password_confirmation)
   end
-  
 end

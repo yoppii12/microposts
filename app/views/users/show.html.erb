@@ -18,7 +18,7 @@
         <%= render 'follow_form' if logged_in? %>
         
         <% if @user.microposts.any? %>
-        <h3>Microposts(<%= @user.microposts.count %>)</h3>
+        <h3>Microposts ( <%= @user.microposts.count %> )</h3>
         <ol class="microposts"><%= render @microposts %></ol>
         <% end %>
     </div>
@@ -39,6 +39,10 @@
         <span class="label label-info">Area:<%= @user.area %></span>
         <br>
         <br>
+        <%= link_to "Followings", followings_user_path %>:(<%= @user.following_relationships.count %>)
+        <%= link_to "Followers ", followers_user_path %>:(<%= @user.follower_relationships.count %>)
+        <br>
+        
         <%= link_to 'プロフィール編集', edit_user_path %>
     </div>
 </h3>

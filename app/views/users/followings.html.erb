@@ -1,0 +1,26 @@
+<% #自分をフォローしているユーザーの表示　%>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Following Users
+    </div>
+    
+    <div class="followings">
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @followings.each do |following_users| %>
+                    <tr>
+                        <th><span class="label label-info"><%= following_users.name %></span></th>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

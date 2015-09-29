@@ -28,20 +28,20 @@ class User < ActiveRecord::Base
     has_many :follower_relationships, class_name:  "Relationship", foreign_key: "followed_id", dependent: :destroy
     has_many :follower_users, through: :follower_relationships, source: :follower
     
-    #他のユーザーをフォローする
-    def follow(other_user)
+    # 他のユーザーをフォローする
+      def follow(other_user)
         following_relationships.create(followed_id: other_user.id)
-    end
+      end
     
-    #フォローしているユーザーをアンフォローする
-    def unfollow(other_user)
-        folowing_relationships.find_by(followed_id: other_user.id).destroy
-    end
+      # フォローしているユーザーをアンフォローする
+      def unfollow(other_user)
+        following_relationships.find_by(followed_id: other_user.id).destroy
+      end
     
-    #あるユーザーをフォローしているかどうか？
-    def following?(other_user)
+      # あるユーザーをフォローしているかどうか？
+      def following?(other_user)
         following_users.include?(other_user)
-    end
+      end
     
     def feed_items
         Micropost.where(user_id: following_user_ids + [self.id])

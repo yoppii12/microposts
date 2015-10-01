@@ -1,5 +1,4 @@
 class Favorite < ActiveRecord::Base
-  belongs_to :user
-  validates :user_id, presence: true
-  validates :micropost_id, presence: true
+  belongs_to :user , class_name: "User"
+  belongs_to :favorite, class_name: "Micropost"
 end

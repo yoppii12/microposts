@@ -49,11 +49,11 @@ class UsersController < ApplicationController
   end
   
   def favorite_items
-    if logged_in?
-      @micropost=Favorite.find(params[:micropost_id])
-      @user=@micropost.user_id
-    end
+    @user=User.find(params[:id])
+    @favorites=@user.favorite_microposts
   end
+  
+  
   
   private
   #ストロングパラメーターの設定

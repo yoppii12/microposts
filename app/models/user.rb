@@ -47,6 +47,23 @@ class User < ActiveRecord::Base
         Micropost.where(user_id: following_user_ids + [self.id])
     end
     
+    has_many :favorite_relationships, class_name: "Favorite", foreign_key: "user_id", dependent: :destroy
+    has_many :favorite_microposts, through: :favorite_relationships, source: :favorite
+    
+    
+    #あるユーザーの投稿をお気に入りに追加する
+    def favorite(other_user)
+      favorites_relationships.create(user_id: other_user.id)
+    end
+    
+    #あるユーザーの投稿をお気に入りから削除する
+    def unfavorite(other_user)
+      favorite_relationships.find_by(user_id: other_user.id).destroy
+    end
+    
+    def favoriting?(other_user)
+      favorite_microposts.include?(other_user)
+    end
     
 end
 

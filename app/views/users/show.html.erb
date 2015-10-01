@@ -41,6 +41,7 @@
         <br>
         <%= link_to "Followings", followings_user_path %>:(<%= @user.following_relationships.count %>)
         <%= link_to "Followers ", followers_user_path %>:(<%= @user.follower_relationships.count %>)
+        <%= link_to "Favorites", favorite_microposts_path %>
         <br>
         
         <%= link_to 'プロフィール編集', edit_user_path %>

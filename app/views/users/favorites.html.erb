@@ -15,11 +15,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% @user.each do |microposts| %>
-                    <% @micropost.each do |microposts| %>
+                    <% @user.each do |favorite_microposts| %>
+                    <% @favorites.each do |favorite_microposts| %>
                     <tr>
-                        <th><span class="label label-info"><%= microposts.name %></span></th>
-                        <td><%= microposts.content %> </td>
+                        <th><span class="label label-info"><%= favorite_microposts.name %></span></th>
+                        <td><%= favorite_microposts.content %> </td>
                     </tr>
                     <% end %>
                 </tbody>

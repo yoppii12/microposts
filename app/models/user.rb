@@ -52,17 +52,17 @@ class User < ActiveRecord::Base
     
     
     #あるユーザーの投稿をお気に入りに追加する
-    def favorite(other_user)
-      favorites_relationships.create(user_id: other_user.id)
+    def favorite(other_micropost)
+      favorite_relationships.create(micropost_id: other_micropost.id)
     end
     
     #あるユーザーの投稿をお気に入りから削除する
-    def unfavorite(other_user)
-      favorite_relationships.find_by(user_id: other_user.id).destroy
+    def unfavorite(other_micropost)
+      favorite_relationships.find_by(micropost_id: other_micropost.id).destroy
     end
     
-    def favoriting?(other_user)
-      favorite_microposts.include?(other_user)
+    def favoriting?(other_micropost)
+      favorite_microposts.include?(other_micropost)
     end
     
 end
